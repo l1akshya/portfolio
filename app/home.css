@@ -1,0 +1,165 @@
+body {
+    background-color: black; /* Sets the background color of the webpage */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+.logo-container {
+    top: 2vh;
+    left: 1.5vw;
+    position: absolute;
+    width: 62.5px; /* Default width for larger screens */
+}
+
+.name {
+    top: calc(2vh + 93.5px + 5px); /* Default positioning for larger screens */
+    left: 1vw;
+    position: absolute;
+    color: white;
+    font-family: "Stencil", sans-serif;
+    font-size: smaller;
+    text-align: center;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    .logo-container {
+        width: 40px; /* Smaller width for phones */
+        top: 1vh; /* Adjusted positioning */
+        left: 1vw;
+    }
+    
+    .name {
+        top: calc(1vh + 60px + 3px); /* Adjusted to match the new logo size */
+        font-size: x-small; /* Smaller font size for mobile */
+        left: 0.5vw;
+    }
+}
+
+/* Even smaller screens like small phones */
+@media screen and (max-width: 480px) {
+    .logo-container {
+        width: 35px; /* Further reduced for very small screens */
+    }
+    
+    .name {
+        top: calc(1vh + 52.5px + 3px);
+        font-size: xx-small;
+    }
+}
+:root {
+    --color-start: #ffffff;
+    --color-end: #3a4475;
+}
+
+/* Container */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* Ring - Fixed Position */
+.ring {
+    --size: 30vw;
+    --thickness-percentage: 2.5;
+
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    position: absolute;
+
+    top: 15vh;
+    left: 35%; /* FIXED position */
+    
+    /* Gradient */
+    background: conic-gradient(
+        from 0deg, 
+        var(--color-start) 0%,
+        var(--color-end) 50%,
+        var(--color-start) 100%
+    );
+
+    /* Radial mask */
+    -webkit-mask: radial-gradient(
+        circle,
+        transparent calc(50% - (var(--thickness-percentage) * 1%) - 1px),
+        black calc(50% - (var(--thickness-percentage) * 1%)),
+        black 50%,
+        transparent 50%
+    );
+    mask: radial-gradient(
+        circle,
+        transparent calc(50% - (var(--thickness-percentage) * 1%) - 1px),
+        black calc(50% - (var(--thickness-percentage) * 1%)),
+        black 50%,
+        transparent 50%
+    );
+
+    animation: rotateRing 2s linear infinite;
+}
+
+@keyframes rotateRing {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Intro - Shifted slightly to the right */
+.intro {
+    position: absolute;
+    color: white;
+    font-family: "Stencil", sans-serif;
+    font-size: calc(16px + 1.5vw);
+    text-align: center;
+
+    top: 35vh;
+    left: calc(35% + 12vw); /* Moved slightly to the right */
+    transform: translateX(-50%);
+}
+
+/* Char-container - Stays in position */
+.char-container {
+    position: absolute;
+    top: 35vh;
+    left: calc(35% + 17vw); /* Keeping its original relative position */
+
+    animation: hopAnimation 0.6s infinite ease-in-out;
+}
+
+@keyframes hopAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+@media (max-width: 768px) {
+    .ring {
+        --size: 60vw;
+        top: 30vh;
+        left: 20%;
+    }
+
+    .intro {
+        top: 38vh; /* Move text further down */
+        left: calc(20% + 30vw);
+        transform: translateX(-50%);
+    }
+
+    .char-container {
+        top: 45vh; /* Move the character slightly down */
+        left: calc(20% + 35vw);
+        transform: scale(0.5); /* Scale down the character */
+    }
+}
+
+
+
+
