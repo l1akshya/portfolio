@@ -49,6 +49,39 @@ export default function Home() {
             height={93.5}
           />
         </div>
+
+        <div className="lamp-container">
+          {/* Lamp 1 */}
+          <div className="lamp-group">
+            <div className="lamp">
+              <Image src="/lamp.png" alt="lamp" width={54.545} height={61.905} />
+            </div>
+            <div className="lamp-glow">
+              <button className="glow-button">Click Me</button>
+            </div>
+          </div>
+
+          {/* Lamp 2 */}
+          <div className="lamp-group">
+            <div className="lamp">
+              <Image src="/lamp.png" alt="lamp" width={54.545} height={61.905} />
+            </div>
+            <div className="lamp-glow">
+              <button className="glow-button">Click Me</button>
+            </div>
+          </div>
+
+          {/* Lamp 3 */}
+          <div className="lamp-group">
+            <div className="lamp">
+              <Image src="/lamp.png" alt="lamp" width={54.545} height={61.905} />
+            </div>
+            <div className="lamp-glow">
+              <button className="glow-button">Click Me</button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
