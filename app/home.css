@@ -1,40 +1,13 @@
 body {
-    background-color: black; /* Sets the background color of the webpage */
+    background: radial-gradient(circle, #0a0a23, #000000); /* Deep navy to black */
     margin: 0; /* Removes default margin */
     padding: 0; /* Removes default padding */
+    min-height: 100vh; /* Ensures full-screen coverage */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.logo-container {
-    top: 2vh;
-    left: 1.5vw;
-    position: absolute;
-    width: 62.5px; /* Default width for larger screens */
-}
-
-.name {
-    top: calc(2vh + 93.5px + 5px); /* Default positioning for larger screens */
-    left: 1vw;
-    position: absolute;
-    color: white;
-    font-family: "Stencil", sans-serif;
-    font-size: smaller;
-    text-align: center;
-}
-
-/* Media query for mobile devices */
-@media screen and (max-width: 768px) {
-    .logo-container {
-        width: 40px; /* Smaller width for phones */
-        top: 1vh; /* Adjusted positioning */
-        left: 1vw;
-    }
-    
-    .name {
-        top: calc(1vh + 60px + 3px); /* Adjusted to match the new logo size */
-        font-size: x-small; /* Smaller font size for mobile */
-        left: 0.5vw;
-    }
-}
 
 /* Even smaller screens like small phones */
 @media screen and (max-width: 480px) {
