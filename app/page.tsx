@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import "./home.css";
 
 export default function Home() {
+  const router = useRouter();
   const [text, setText] = useState("");
   const fullText = ["Hi I am", "Lokesh"]; // Two separate lines
   const typingSpeed = 100;
@@ -33,10 +35,17 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // Handle button clicks
+  // Handle button clicks with navigation
   const handleButtonClick = (buttonName) => {
     console.log(`Clicked on ${buttonName}`);
-    // This will be replaced with links later
+    
+    if (buttonName === "About Me") {
+      router.push("/about");
+    } else if (buttonName === "Projects") {
+      router.push("/projects");
+    } else if (buttonName === "Contact Info") {
+      router.push("/profile");
+    }
   };
 
   return (

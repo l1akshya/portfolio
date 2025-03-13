@@ -1,0 +1,9 @@
+body {
+    background: radial-gradient(circle, #0a0a23, #000000); /* Deep navy to black */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    min-height: 100vh; /* Ensures full-screen coverage */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
