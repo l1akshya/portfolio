@@ -13,7 +13,7 @@ export default function Home() {
     let lineIndex = 0;
     let charIndex = 0;
     let currentLine = fullText[lineIndex];
-    let typedLines: string[] = ["", ""]; // Store typed text separately
+    let typedLines = ["", ""]; // Store typed text separately
 
     const interval = setInterval(() => {
       if (charIndex < currentLine.length) {
@@ -33,6 +33,12 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  // Handle button clicks
+  const handleButtonClick = (buttonName) => {
+    console.log(`Clicked on ${buttonName}`);
+    // This will be replaced with links later
+  };
+
   return (
     <div className="page">
       <div className="center">
@@ -51,37 +57,45 @@ export default function Home() {
         </div>
 
         <div className="lamp-container">
-          {/* Lamp 1 */}
+          {/* Lamp 1 with About Me */}
           <div className="lamp-group">
             <div className="lamp">
               <Image src="/lamp.png" alt="lamp" width={54.545} height={61.905} />
             </div>
-            <div className="lamp-glow">
-              <button className="glow-button">Click Me</button>
-            </div>
+            <div className="lamp-glow"></div>
+            <button
+              className="lamp-button"
+              onClick={() => handleButtonClick("About Me")}
+            ></button>
+            <div className="button-label">About Me</div>
           </div>
 
-          {/* Lamp 2 */}
+          {/* Lamp 2 with Projects */}
           <div className="lamp-group">
             <div className="lamp">
               <Image src="/lamp.png" alt="lamp" width={54.545} height={61.905} />
             </div>
-            <div className="lamp-glow">
-              <button className="glow-button">Click Me</button>
-            </div>
+            <div className="lamp-glow"></div>
+            <button
+              className="lamp-button"
+              onClick={() => handleButtonClick("Projects")}
+            ></button>
+            <div className="button-label">Projects</div>
           </div>
 
-          {/* Lamp 3 */}
+          {/* Lamp 3 with Contact Info */}
           <div className="lamp-group">
             <div className="lamp">
               <Image src="/lamp.png" alt="lamp" width={54.545} height={61.905} />
             </div>
-            <div className="lamp-glow">
-              <button className="glow-button">Click Me</button>
-            </div>
+            <div className="lamp-glow"></div>
+            <button
+              className="lamp-button"
+              onClick={() => handleButtonClick("Contact Info")}
+            ></button>
+            <div className="button-label">Contact Info</div>
           </div>
         </div>
-
       </div>
     </div>
   );
